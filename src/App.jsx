@@ -151,8 +151,8 @@ export default function App() {
       <div className="p-4 space-y-6">
         <h2 className="text-xl font-bold text-gray-800">Meu Perfil</h2>
         <div className="bg-white p-6 rounded-xl shadow border border-gray-200 text-center">
-          <div className="w-20 h-20 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-3">PJ</div>
-          <h3 className="text-xl font-bold text-gray-800">Paulo João</h3>
+          <div className="w-20 h-20 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-3">U</div>
+          <h3 className="text-xl font-bold text-gray-800">Nome do Usuário</h3>
           <p className="text-gray-500">Projeto Detalhado de Software</p>
           <p className="text-gray-500 text-sm">5º Semestre</p>
         </div>
