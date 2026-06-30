@@ -46,8 +46,8 @@ export default function App() {
     setSolicitacoes(solicitacoes.map(s => s.id === id ? { ...s, status: aprovado ? 'aprovado' : 'recusado' } : s));
   };
 
-  // Telas
-  const TelaHome = () => (
+  // Funções de Renderização das Telas (Corrigidas para não perderem o foco)
+  const renderTelaHome = () => (
       <div className="p-4 space-y-6">
         <div className="bg-blue-600 text-white p-6 rounded-xl shadow-md">
           <h2 className="text-2xl font-bold">Seja bem-vindo(a) ao TeamU!</h2>
@@ -72,7 +72,7 @@ export default function App() {
       </div>
   );
 
-  const TelaBuscar = () => {
+  const renderTelaBuscar = () => {
     const gruposFiltrados = filtroDisciplina === 'Todas' ? grupos : grupos.filter(g => g.disciplina === filtroDisciplina);
 
     return (
@@ -115,7 +115,7 @@ export default function App() {
     );
   };
 
-  const TelaCriar = () => (
+  const renderTelaCriar = () => (
       <div className="p-4 space-y-4">
         <h2 className="text-xl font-bold text-gray-800">Criar Novo Grupo</h2>
         {mensagemSucesso && <div className="bg-green-100 text-green-800 p-3 rounded-lg text-sm">{mensagemSucesso}</div>}
@@ -147,7 +147,7 @@ export default function App() {
       </div>
   );
 
-  const TelaPerfil = () => (
+  const renderTelaPerfil = () => (
       <div className="p-4 space-y-6">
         <h2 className="text-xl font-bold text-gray-800">Meu Perfil</h2>
         <div className="bg-white p-6 rounded-xl shadow border border-gray-200 text-center">
@@ -165,7 +165,7 @@ export default function App() {
       </div>
   );
 
-  const TelaGestao = () => (
+  const renderTelaGestao = () => (
       <div className="p-4 space-y-4">
         <h2 className="text-xl font-bold text-gray-800">Gestão do Grupo</h2>
 
@@ -208,11 +208,11 @@ export default function App() {
 
           {/* Área Principal com Scroll */}
           <main className="flex-1 overflow-y-auto pb-20">
-            {telaAtiva === 'home' && <TelaHome />}
-            {telaAtiva === 'buscar' && <TelaBuscar />}
-            {telaAtiva === 'criar' && <TelaCriar />}
-            {telaAtiva === 'perfil' && <TelaPerfil />}
-            {telaAtiva === 'gestao' && <TelaGestao />}
+            {telaAtiva === 'home' && renderTelaHome()}
+            {telaAtiva === 'buscar' && renderTelaBuscar()}
+            {telaAtiva === 'criar' && renderTelaCriar()}
+            {telaAtiva === 'perfil' && renderTelaPerfil()}
+            {telaAtiva === 'gestao' && renderTelaGestao()}
           </main>
 
           {/* Menu Inferior */}
